@@ -4,6 +4,7 @@ class BaseShip {
   function setPosition($x, $y) {
     $this->x = $x;
     $this->y = $y;
+    $this->nearestShip = null;
   }
   function setLifePoints($lifePoints) {
     return $this->life=$lifePoints;
@@ -28,6 +29,12 @@ class BaseShip {
   }
   function getFuel() {
     return $this->fuel;
+  }
+  function setNearestShip($nearestShip) {
+    return $this->nearestShip=$nearestShip;
+  }
+  function getNearestShip() {
+    return $this->nearestShip;
   }
 
 }
