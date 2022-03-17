@@ -2,10 +2,15 @@
 namespace App\Common\Transactions\Ships;
 class BaseShip {
   function setPosition($x, $y) {
+    if(!isset($this->x) && !isset($this->y)){
+      $this->initialPosition = ["x" => $x, "y" => $y];
+    }
     $this->x = $x;
     $this->y = $y;
+    
     $this->nearestShip = null;
   }
+
   function setLifePoints($lifePoints) {
     return $this->life=$lifePoints;
   }
@@ -17,6 +22,9 @@ class BaseShip {
   }
   function getName() {
     return $this->name;
+  }
+  function setName($name) {
+    $this->name = $name;
   }
   function getType() {
     return $this->type;

@@ -17,6 +17,8 @@ class FleetResource extends JsonResource
         return [
             "type" => $this->type,
             "points" => [$this->x, $this->y],
+            "name" => $this->name,
+            "initialPosition" => [$this->initialPosition["x"], $this->initialPosition["y"]],
         ];
     }
 }

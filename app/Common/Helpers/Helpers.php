@@ -16,6 +16,7 @@ function generate_fleet($combatShips=25, $supportShips=25){
       $ship->setGuns(10);
       $ship->setDamagePerGun(10);
       $ship->setType("battleship");
+      $ship->setName(uniqid());
       $ship->setPosition($x[$coordIndex],$y[$coordIndex]);
       $coordIndex++;
       $fleet->addOffensiveShip($ship);
@@ -23,6 +24,7 @@ function generate_fleet($combatShips=25, $supportShips=25){
   for($i=0; $i<$supportShips; $i++){
       $ship = new BaseSupportShip();
       $ship->setPosition($x[$coordIndex],$y[$coordIndex]);
+      $ship->setName(uniqid());
       $coordIndex++;
       $fleet->addSupportShip($ship);
   }
